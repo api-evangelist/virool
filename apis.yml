@@ -1,7 +1,28 @@
 aid: virool
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/virool.png
 name: Virool
-description: Virool is a company surfaced as a portfolio company of 500-global, a16z and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Virool is a native video advertising platform that distributes branded video
+  content ("advertainment") across the web to help brands reach and grow
+  targeted audiences. It pairs a proprietary data-management platform of roughly
+  450 million unique profiles for granular audience targeting with native video
+  placement technology designed to minimize disruption to the user experience,
+  and a real-time performance analytics dashboard that includes emotional
+  insight tracking (eIQ). Virool serves advertisers and publishers through
+  self-service campaign and monetization dashboards rather than a public
+  developer API. The company was backed by 500 Global and a16z and has run
+  campaigns for brands including Turkish Airlines, Under Armour, and WestJet.
 url: https://raw.githubusercontent.com/api-evangelist/virool/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,9 +33,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Advertising
+- Video Advertising
+- Video
+- AdTech
+- Marketing
+- Brand
+- Media
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +50,18 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/virool-domain-security.yml
 - type: Website
   url: https://virool.com
+- type: SignUp
+  url: https://virool.com/signup
+- type: Login
+  url: https://virool.com/login
+- type: Support
+  url: https://virool.com/contact-us
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
