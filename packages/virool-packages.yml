@@ -1,0 +1,92 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  registry.npmjs.org search + package metadata, pypi.org, rubygems.org, packagist.org,
+  crates.io, and the virool.com site (no SDK or developer page exists to derive from)
+summary:
+  official_client_libraries: 0
+  packages_found: 3
+  note: >-
+    Virool publishes NO first-party API client library in any registry. The three npm
+    packages carrying a "virool-" name prefix were published in April/June 2016 from
+    PERSONAL npm accounts (kastsiushkin, vladtsf), not an organization scope, and none of
+    them is a client for a Virool API — two are forks of unrelated third-party projects
+    (Imply's Pivot for Druid.io, a Material Design React component kit) and the third is
+    an internal inventory tool with no repository and no published interface. They are
+    recorded here as measured evidence of abandonment, NOT as SDKs: no `SDKs` pointer is
+    emitted in apis.yml, because emitting one would credit Virool with a client library it
+    never shipped.
+registries_checked:
+- registry: npm
+  query: virool
+  result: 3 name-prefix matches, 0 first-party client libraries
+- registry: pypi
+  query: virool
+  result: 404 — no package
+- registry: rubygems
+  query: virool
+  result: empty result set
+- registry: packagist
+  query: virool
+  result: no match (only unrelated "virgool" packages)
+- registry: crates.io
+  query: virool
+  result: 0 crates
+- registry: maven-central
+  query: virool
+  result: no artifact
+- registry: pkg.go.dev
+  query: virool
+  result: no module
+packages:
+- language: javascript
+  registry: npm
+  name: virool-inventory-tool
+  url: https://www.npmjs.com/package/virool-inventory-tool
+  install: npm install virool-inventory-tool
+  official: false
+  api_client: false
+  version: 0.0.1
+  published: '2016-04-21'
+  maintainers:
+  - kastsiushkin
+  note: >-
+    Published once, from a personal npm account, over ten years ago. No repository field,
+    no README interface, no dependency on any Virool API. Not a client library.
+- language: javascript
+  registry: npm
+  name: virool-ui-kit
+  url: https://www.npmjs.com/package/virool-ui-kit
+  install: npm install virool-ui-kit
+  official: false
+  api_client: false
+  version: 0.0.1
+  published: '2016-04-21'
+  maintainers:
+  - kastsiushkin
+  repository: https://github.com/kastsiushkin/ui-kit
+  note: >-
+    A republish of a personal Material Design React component kit under a virool- name
+    prefix. Points at a personal GitHub repo, not a Virool org repo.
+- language: javascript
+  registry: npm
+  name: virool-pivot
+  url: https://www.npmjs.com/package/virool-pivot
+  install: npm install virool-pivot
+  official: false
+  api_client: false
+  version: 0.8.42
+  published: '2016-06-08'
+  maintainers:
+  - vladtsf
+  repository: https://github.com/implydata/pivot
+  note: >-
+    A fork/republish of Imply Data's Pivot, a web UI for Druid.io. Third-party software
+    renamed, not a Virool product or client.
+decay_signal:
+  latest_publish_across_all_matches: '2016-06-08'
+  years_since_last_publish: 10
+  interpretation: >-
+    Nothing bearing the Virool name has been published to any package registry in a
+    decade. Combined with the NXDOMAIN on the documented API host api.virool.com, this is
+    consistent with a platform whose developer-facing surface was retired.

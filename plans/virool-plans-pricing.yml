@@ -1,0 +1,31 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.virool.com/publisher
+plan_count: 0
+note: >-
+  Virool publishes no pricing page and no plan tiers. https://virool.com/pricing returns
+  404 and no pricing link appears anywhere in the site navigation, burger menu or footer.
+  The only commercial language published is a media-buying pricing MODEL, not a plan
+  ladder: the publisher product page states each ad unit is "Available at CPM pricing" or
+  "Available at CPM or CPV pricing", with no rate, floor, minimum spend or currency
+  attached. Campaign spend is arranged through signup or the contact form
+  (contact-us@virool.com, +1 833 284 7665). There is no API, so there is no API plan.
+pricing_model:
+  type: media-buying
+  units:
+  - CPM
+  - CPV
+  rates_published: false
+  minimum_spend_published: false
+  currency: null
+  evidence_quote: 'Available at CPM or CPV pricing'
+plans: []
+probed:
+- url: https://virool.com/pricing
+  status: 404
+- url: https://www.virool.com/publisher
+  status: 200
+- url: https://www.virool.com/advertiser
+  status: 200
+- url: https://www.virool.com/signup
+  status: 200

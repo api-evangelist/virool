@@ -1,0 +1,26 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.virool.com/help
+limit_count: 0
+note: >-
+  No rate limits are documented, because no API is documented. Virool publishes no
+  developer portal, no API reference and no machine-readable contract; the historically
+  documented API host api.virool.com no longer resolves (NXDOMAIN), so no live response
+  headers can be observed either. Recorded as an honest zero rather than omitted.
+rate_limits: []
+response_headers:
+  observed: false
+  documented: false
+  note: >-
+    No X-RateLimit-*, RateLimit-* or Retry-After behaviour could be captured — there is no
+    API endpoint to call.
+exhaustion_status_code: null
+probed:
+- url: https://www.virool.com/help
+  status: 200
+- url: https://virool.com/developers
+  status: 404
+- url: https://virool.com/api
+  status: 404
+- target: api.virool.com
+  status: NXDOMAIN

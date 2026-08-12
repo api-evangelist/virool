@@ -1,0 +1,60 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.virool.com/inline
+note: >-
+  Virool publishes exactly one industry-standard conformance claim, and it is an ad-serving
+  claim rather than an API claim: its InLine outstream unit is described as "VAST
+  compliant". No version of the IAB VAST specification is named, no VAST tag endpoint or
+  sample tag is published, and no certification body is cited — so the claim is recorded
+  as asserted-by-vendor and unverified. Every API-layer standard below is a measured
+  false: there is no OpenAPI, no OAuth surface, no error format and no pagination to
+  conform to, because Virool publishes no API.
+conformance:
+- id: vast
+  name: IAB VAST (Video Ad Serving Template)
+  conforms: true
+  verified: false
+  evidence:
+    quote: 'VAST compliant'
+    url: https://www.virool.com/inline
+    status: 200
+    note: >-
+      Vendor assertion on the InLine product page. Version unspecified. The publisher page
+      additionally describes monetizing "pre-roll inventory via VAST placement in your
+      waterfall" (https://www.virool.com/publisher), confirming VAST is the integration
+      mechanism offered to publishers.
+- id: oauth2
+  conforms: false
+  evidence:
+    note: No OAuth surface. /.well-known/oauth-authorization-server returned 404 on both hosts.
+- id: oidc
+  conforms: false
+  evidence:
+    note: /.well-known/openid-configuration returned 404 on both hosts.
+- id: rfc9457
+  conforms: false
+  evidence:
+    note: No API and no error catalog published, so no problem+json envelope to assess.
+- id: rfc9116
+  name: security.txt
+  conforms: false
+  evidence:
+    note: /.well-known/security.txt returned 404 on both hosts.
+- id: idempotency
+  conforms: false
+  evidence:
+    note: No API conventions published.
+- id: pagination
+  conforms: false
+  evidence:
+    note: No API reference published.
+compliance_programs:
+  published: false
+  certifications: []
+  note: >-
+    No trust center, no SOC 2 / ISO 27001 / PCI / HIPAA claim, and no privacy or security
+    program page is served. The footer's "Privacy Policy" text carries no href — the link
+    is dead — so no privacy document could be fetched. NO `Compliance` pointer is emitted
+    in apis.yml.
+x-evidence:
+  fetched: '2026-08-12'

@@ -33,7 +33,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-12'
 tags:
 - Company
 - Advertising
@@ -60,8 +60,43 @@ common:
   url: https://virool.com/login
 - type: Support
   url: https://virool.com/contact-us
+- type: HelpCenter
+  url: https://www.virool.com/help
+- type: TermsOfService
+  url: https://www.virool.com/publisher-terms-and-conditions
+- type: Packages
+  url: packages/virool-packages.yml
+- type: Lifecycle
+  url: lifecycle/virool-lifecycle.yml
+- type: Conformance
+  url: conformance/virool-conformance.yml
+- type: Plans
+  url: plans/virool-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/virool-rate-limits.yml
+- type: LLMsTxt
+  url: llms/virool-llms.txt
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-12'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 7
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Virool's marketing site is live but ships no developer surface at all — every
+    developer path (/developers, /api, /docs, /openapi.json) 404s and the API host its
+    old directory listings pointed at, api.virool.com, no longer resolves in DNS.
+  evidence:
+  - url: https://virool.com/developers
+    status: 404
+  - url: https://virool.com/api
+    status: 404
+  - url: https://virool.com/openapi.json
+    status: 404
+  - url: https://virool.com/.well-known/agent-card.json
+    status: 404
+  - url: http://api.virool.com/api/v1
+    status: 0
+  checked: '2026-08-12'

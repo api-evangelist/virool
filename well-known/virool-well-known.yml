@@ -1,0 +1,59 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTPS probes of virool.com and www.virool.com
+note: >-
+  Every /.well-known/ path returned a clean HTTP 404 from the Rails application on both
+  the apex and www hosts. No discovery document is served, so NO WellKnown or SecurityTxt
+  pointer is emitted in apis.yml — this file records a measured absence, not a presence.
+  Virool has no API host to probe: the historically documented endpoint
+  http://api.virool.com/api/v1 no longer resolves (NXDOMAIN), so there is no second host
+  in this probe set.
+hosts:
+- host: https://virool.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /security.txt
+    status: 404
+- host: https://www.virool.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /security.txt
+    status: 404
+summary:
+  probed: 18
+  hits: 0
+  documents_saved: 0
+x-evidence:
+  fetched: '2026-08-12'
+  robots_txt: 404
+  llms_txt: 404

@@ -1,0 +1,65 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  DNS resolution of api.virool.com + live HTTPS probes of virool.com; no versioning,
+  deprecation, SLA or status-page document is published by Virool
+summary: >-
+  Virool publishes no API versioning policy, no deprecation policy, no SLA and no status
+  page. The material lifecycle finding is retirement, not policy: the API host Virool's
+  developers were historically pointed at, http://api.virool.com/api/v1, no longer exists
+  in DNS. The marketing site remains live and the Rails application still serves signup
+  and login, but the developer-facing surface behind it is gone.
+api_surface:
+  state: retired
+  historical_base_url: http://api.virool.com/api/v1
+  historical_base_url_source: >-
+    Third-party API directory listings (ProgrammableWeb, RapidAPI) that catalogued the
+    Virool API. Virool's own site carries no reference to it today.
+  probe:
+    host: api.virool.com
+    dns_status: NXDOMAIN
+    checked: '2026-08-12'
+  note: >-
+    Recorded as an observed absence. No Virool-published deprecation notice, sunset date,
+    or migration guide was found for this host — the endpoint simply stopped resolving.
+versioning:
+  policy_published: false
+  scheme: null
+  note: No versioning policy is published on virool.com.
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    No RFC 8594 Sunset/Deprecation header behaviour can be observed because no API host
+    resolves. No `Deprecation` pointer is emitted in apis.yml.
+status_page:
+  published: false
+  probed:
+  - url: https://status.virool.com/
+    dns_status: NXDOMAIN
+  note: >-
+    No status page exists on a Virool-controlled host. No `StatusPage` pointer is emitted
+    in apis.yml.
+sla:
+  published: false
+company_lifecycle:
+  note: >-
+    Third-party sources (Crunchbase, LinkedIn, PitchBook) record Virool as having been
+    acquired in 2017. This is recorded as context only — it is not first-party evidence
+    and no Virool-published statement of the acquisition was found on virool.com.
+  site_state: live
+  site_copyright_year: '2026'
+  evidence:
+  - url: https://www.virool.com/about
+    status: 200
+    note: Footer reads "©2026 Virool All Rights Reserved"; page content is unchanged from the 2015-2016 era.
+x-evidence:
+  fetched: '2026-08-12'
+  checks:
+  - target: api.virool.com
+    result: NXDOMAIN
+  - url: https://www.virool.com/about
+    http_status: 200
+  - url: https://virool.com/pricing
+    http_status: 404
