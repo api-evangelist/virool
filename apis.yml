@@ -44,7 +44,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-08-12'
+modified: '2026-10-06'
 tags:
 - Company
 - Advertising
@@ -70,6 +70,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://virool.com/press
+  type: Blog
 - type: DomainSecurity
   url: security/virool-domain-security.yml
 - type: Website
